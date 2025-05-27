@@ -8,8 +8,8 @@ import Navbar from './components/Navbar'
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
       <div className="bg-dark min-vh-100">
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:type/:id" element={<Detail />} />

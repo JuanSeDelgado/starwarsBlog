@@ -6,6 +6,13 @@ const Navbar = () => {
     const context = useContext(GlobalContext);
     const [showDropdown, setShowDropdown] = useState(false);
 
+    const getItemType = (item) => {
+        if (item.gender) return 'Personaje';
+        if (item.gravity) return 'Planeta';
+        if (item.model) return 'Vehículo';
+        return 'Desconocido';
+    };
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
@@ -42,7 +49,7 @@ const Navbar = () => {
                                                 <div className="flex-grow-1">
                                                     <h6 className="mb-0 text-warning">{item.name}</h6>
                                                     <small className="text-light">
-                                                        {item.gender ? 'Personaje' : 'Planeta'}
+                                                        {getItemType(item)}
                                                     </small>
                                                 </div>
                                                 <button 
